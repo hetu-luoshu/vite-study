@@ -3,7 +3,7 @@ import { RouteRecordRaw } from "vue-router";
 const layout = import.meta.glob("../layout/*.vue");
 const views = import.meta.glob("../views/**/*.vue");
 
-function getRoutes() {
+function getLayoutRoutes() {
   const layoutRoutes = [] as RouteRecordRaw[];
   Object.entries(layout).forEach(([file, module]) => {
     const route = getRouteByModule(file, module);
@@ -33,4 +33,4 @@ function getRouteByModule(file: string, module: () => Promise<any>) {
   } as RouteRecordRaw;
 }
 
-export default getRoutes();
+export default getLayoutRoutes();
