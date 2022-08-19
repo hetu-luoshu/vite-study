@@ -1,11 +1,14 @@
 <script setup lang="ts">
-import helper from "@/types/helper";
-
 </script>
 
 <template>
-
-  <router-view></router-view>
+  <suspense>
+    <template #default>
+      <div>
+        <router-view></router-view>
+      </div>
+    </template>
+  </suspense>
 </template>
 
 <style scoped>
